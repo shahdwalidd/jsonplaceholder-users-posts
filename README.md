@@ -40,12 +40,12 @@ This project was created to practice:
 
 ---
 
-## 🖼️ Preview
-> Example layout (replace with your own screenshot if available)
+# JSONPlaceholder Users & Posts
 
-![Preview Screenshot]( https://shahdwalidd.github.io/jsonplaceholder-users-posts/)
+This project displays users and posts from JSONPlaceholder API.
 
----
+🌐 **Live Demo:** [Click Here](https://shahdwalidd.github.io/jsonplaceholder-users-posts/)
+
 
 ## 💡 Future Improvements
 - Add loading indicators while fetching data  
