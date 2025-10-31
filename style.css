@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(1200px 600px at 10% 10%, #fffbf0 0%, #fff0f6 10%, #f0f5ff 40%, #f7f7ff 100%);
+}
+#content{
+    max-width: 100%;
+    height: 100vh;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}       
+#con-udiv{
+    display: flex;
+    gap: 20px;
+    height: 100%;
+}
+/* Sidebar for users */
+#users-sidebar{
+    width: 30%; /* users take 30% of the container */
+    background: linear-gradient(135deg, #351433 0%, #322554 50%, #4f2743 100%);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 12px 40px rgba(255,90,95,0.12), inset 0 1px 0 rgba(255,255,255,0.6);
+    overflow-y: auto;
+    height: calc(100vh - 80px);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(6px);
+}
+
+#users-sidebar h2{
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    letter-spacing: 0.6px;
+}
+
+#users-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.user-card{
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 12px;
+    width: 100%; /* fill sidebar */
+    background: linear-gradient(90deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    border-radius: 10px;
+    border-left: 6px solid rgba(255,255,255,0.06);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+
+.user-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.14);
+    background: linear-gradient(90deg, rgba(255,255,255,0.09), rgba(255,255,255,0.03));
+}
+
+.user-avatar{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#e8e8e7,#bc76e8);
+    flex-shrink: 0;
+    box-shadow: 0 6px 18px rgba(255,133,133,0.18);
+    border: 2px solid rgba(255,255,255,0.35);
+}
+
+.user-meta{
+    font-size: 14px;
+    color: rgba(255,255,255,0.95);
+}
+
+.user-name{
+    font-weight: 700;
+    color: #fff;
+}
+
+.user-email{
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+}
+
+/* active user */
+.user-card.active{
+    background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+    box-shadow: 0 18px 48px rgba(124,77,255,0.16), 0 4px 14px rgba(0,0,0,0.12);
+    transform: translateY(-4px);
+    border-left-color: rgba(124,77,255,0.4);
+}
+
+/* Main posts area */
+#posts-div{
+    width: 70%; /* posts take 70% */
+    flex: 0 0 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    overflow-y: auto;
+    height: calc(100vh - 80px);
+    padding: 18px;
+    background: linear-gradient(135deg,#25144f 0%, #672877 100%);
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.16);
+    box-shadow: 0 18px 60px rgba(124,77,255,0.08), inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+#posts-div h2{
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 8px;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+#posts-list{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.post-card{
+    background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+    border-left: 6px solid rgba(124,77,255,0.12);
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.post-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 22px 56px rgba(0,0,0,0.22);
+}
+
+.post-title{
+    font-weight: 800;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.post-body{
+    font-size: 14px;
+    color: rgba(255,255,255,0.92);
+    line-height: 1.45;
+}
+
+/* Scrollbar styling for WebKit */
+#users-sidebar::-webkit-scrollbar, #posts-div::-webkit-scrollbar{
+    width: 10px;
+}
+#users-sidebar::-webkit-scrollbar-track, #posts-div::-webkit-scrollbar-track{
+    background: linear-gradient(180deg,#ffdede, #fff0f6);
+    border-radius: 8px;
+}
+#users-sidebar::-webkit-scrollbar-thumb, #posts-div::-webkit-scrollbar-thumb{
+    background: linear-gradient(180deg,#dfc8df,#ffb3b3);
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.12);
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 700px){
+    #con-udiv{
+        flex-direction: column;
+    }
+    #users-sidebar{
+        width: 100%;
+        height: auto;
+    }
+    #posts-div{
+        height: auto;
+    }
+}
