@@ -43,7 +43,7 @@ This project was created to practice:
 ## 🖼️ Preview
 > Example layout (replace with your own screenshot if available)
 
-![Preview Screenshot](https://i.imgur.com/lJtY0eX.png)
+![Preview Screenshot]( https://shahdwalidd.github.io/jsonplaceholder-users-posts/)
 
 ---
 
